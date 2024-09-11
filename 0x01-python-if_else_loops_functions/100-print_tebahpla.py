@@ -9,4 +9,5 @@ def print_tebahpla():
             result += '{}'.format(chr(90 - i))
     print(result, end='')
 
+
 print_tebahpla()

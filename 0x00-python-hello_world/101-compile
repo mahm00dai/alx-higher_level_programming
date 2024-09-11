@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Check if the PYFILE environment variable is set
+if [ -z "$PYFILE" ]; then
+    echo "Error: PYFILE environment variable is not set."
+    exit 1
+fi
+
+# Check if the file specified in PYFILE exists
+if [ ! -f "$PYFILE" ]; then
+    echo "Error: File $PYFILE does not exist."
+    exit 1
+fi
+
+# Print the message about compiling
+echo "Compiling $PYFILE ..."
+
+# Compile the Python file
+python3 -m py_compile "$PYFILE"
+
+# Extract the filename without extension
+filename=$(basename "$PYFILE" .py)
+
+# Rename the compiled file to the required format
+mv __pycache__/"$filename".cpython-*.pyc "$filename".pyc
+
+# Clean up the __pycache__ directory
+rmdir __pycache__

@@ -27,6 +27,6 @@ if __name__ == "__main__":
 
     # Calculate the result by calling the appropriate function
     result = operators[operator](a, b)
-    
+
     # Print the result in the specified format
     print(f"{a} {operator} {b} = {result}")

@@ -12,27 +12,29 @@ void print_python_list(PyObject *p)
 	Py_ssize_t allocated;
 	PyObject *item;
 
-	if (!PyList_Check(p)) {
+	if (!PyList_Check(p))
+	{
 		fprintf(stderr, "[ERROR] Invalid List Object\n");
 		return;
 	}
 
 	size = PyList_Size(p);
-	allocated = PyList_GetSize(p);  // Not a real function, just for illustration
+	allocated = PyList_GetSize(p);
 
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %zd\n", size);
 	printf("[*] Allocated = %zd\n", allocated);
 
-	for (i = 0; i < size; i++) {
+	for (i = 0; i < size; i++)
+	{
 		item = PyList_GetItem(p, i);
 		printf("Element %zd: %s\n", i, Py_TYPE(item)->tp_name);
 
-		if (PyBytes_Check(item)) {
+		if (PyBytes_Check(item))
+		{
 			printf("[.] bytes object info\n");
 			print_python_bytes(item);
 		}
-		// Handle other types if needed
 	}
 }
 
@@ -46,7 +48,8 @@ void print_python_bytes(PyObject *p)
 	Py_ssize_t i;
 	char *data;
 
-	if (!PyBytes_Check(p)) {
+	if (!PyBytes_Check(p))
+	{
 		fprintf(stderr, "[ERROR] Invalid Bytes Object\n");
 		return;
 	}

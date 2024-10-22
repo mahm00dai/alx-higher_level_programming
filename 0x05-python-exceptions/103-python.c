@@ -1,5 +1,10 @@
 #include <Python.h>
 
+/* Function prototypes */
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
+void print_python_float(PyObject *p);
+
 /**
  * print_python_list - Prints information about a Python list
  * @p: Pointer to a PyObject representing a Python list

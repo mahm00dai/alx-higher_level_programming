@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
-    
+
     for i in range(list_length):
         try:
             # Try dividing corresponding elements from both lists
@@ -21,5 +21,5 @@ def list_division(my_list_1, my_list_2, list_length):
         finally:
             # Append result (either the division or 0 in case of an error)
             new_list.append(result)
-    
+
     return new_list

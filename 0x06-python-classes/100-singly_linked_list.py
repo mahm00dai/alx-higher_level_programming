@@ -10,7 +10,6 @@ class Node:
 
         Args:
             data (int): The data stored in the node.
-            next_node (Node, optional): The next node in the list. Defaults to None.
 
         Raises:
             TypeError: If data is not an integer or next_node is not a Node.

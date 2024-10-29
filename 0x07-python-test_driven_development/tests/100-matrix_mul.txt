@@ -1,0 +1,14 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+[[7, 10], [15, 22]]
+>>> matrix_mul([[1, 2]], [[3, 4], [5, 6]])
+[[13, 16]]
+>>> matrix_mul([[1, 2, 3]], [[4], [5], [6]])
+[[32]]
+>>> matrix_mul([[1]], [[1]])
+[[1]]
+>>> matrix_mul([], [[1]])  # This should raise ValueError
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty
+

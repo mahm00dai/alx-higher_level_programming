@@ -1,0 +1,15 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Hello. How are you? I am fine: thank you.")
+Hello.
+How are you?
+I am fine:
+thank you.
+
+>>> text_indentation("This is a test: Are you there? Yes.")
+This is a test:
+Are you there?
+Yes.
+
+>>> text_indentation("Hello world! ")
+Hello world!
+

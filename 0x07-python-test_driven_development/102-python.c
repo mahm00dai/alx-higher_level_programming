@@ -9,22 +9,24 @@
  */
 void print_python_string(PyObject *p)
 {
+	printf("[.] string object info\n");
+
 	/* Check if p is a Unicode object */
 	if (!PyUnicode_Check(p))
 	{
-		printf("[ERROR] Invalid String Object\n");
+		printf("  [ERROR] Invalid String Object\n");
 		return;
 	}
 
 	/* Get the type of string encoding (ASCII or Unicode) */
 	if (PyUnicode_IS_COMPACT_ASCII(p))
-		printf("[.] string object info\n  type: compact ascii\n");
+		printf("  type: compact ascii\n");
 	else
-		printf("[.] string object info\n  type: compact unicode object\n");
+		printf("  type: compact unicode object\n");
 
 	/* Get the length of the string */
 	Py_ssize_t length = PyUnicode_GET_LENGTH(p);
-
+	
 	printf("  length: %ld\n", length);
 
 	/* Get the value of the string */

@@ -4,10 +4,7 @@ FROM tv_shows
 WHERE id NOT IN (
     SELECT show_id
     FROM tv_show_genres
-    WHERE genre_id = (
-        SELECT id
-        FROM tv_genres
-        WHERE name = 'Comedy'
-    )
+    JOIN tv_genres ON tv_show_genres.genre_id = tv_genres.id
+    WHERE tv_genres.name = 'Comedy'
 )
 ORDER BY title ASC;

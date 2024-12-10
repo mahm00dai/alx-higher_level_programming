@@ -1,6 +1,6 @@
 -- 0-privileges.sql
 -- Create user_0d_2 if it doesn't exist
---CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost';
+CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost';
 
 -- Grant privileges to user_0d_2 if necessary
 GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';
